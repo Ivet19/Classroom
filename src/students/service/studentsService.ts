@@ -23,10 +23,17 @@ export const addStudent = (
     email: email,
     phoneNumber: phoneNumber,
   };
-  if (students.includes(newStudent)) {
+  if (
+    students.some(
+      (student) =>
+        student.email === newStudent.email &&
+        student.phoneNumber === newStudent.phoneNumber
+    )
+  ) {
     showErrorModal("Este estudiante ya está creado.");
+  } else {
+    students.push(newStudent);
   }
-  students.push(newStudent);
 };
 
 // Crea una función para eliminar un estudiante de la lista de estudiantes
