@@ -50,7 +50,21 @@ export const deleteStudent = (students: Student[], studentId: number): void => {
 // La propiedad id debe ser el id del estudiante
 // La propiedad name debe ser el nombre del estudiante
 // La propiedad lastName debe ser el apellido del estudiante
-// export const getStudentsOptions =
+type StudentOptions = {
+  id: number;
+  name: string;
+  lastName: string;
+};
+export const getStudentsOptions = (students: Student[]): StudentOptions[] => {
+  const studentsOptions: StudentOptions[] = students.map((student) => {
+    return {
+      id: student.id,
+      name: student.name,
+      lastName: student.lastName,
+    };
+  });
+  return studentsOptions;
+};
 
 // Crea una función para obtener el nombre completo de un estudiante por su id
 // La función debe recibir un array de estudiantes y el id del estudiante
