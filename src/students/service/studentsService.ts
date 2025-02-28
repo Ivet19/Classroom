@@ -23,6 +23,7 @@ export const addStudent = (
     email: email,
     phoneNumber: phoneNumber,
   };
+
   if (
     students.some(
       (student) =>
@@ -33,6 +34,7 @@ export const addStudent = (
     showErrorModal("Este estudiante ya está creado.");
     return;
   }
+
   students.push(newStudent);
 };
 
