@@ -8,11 +8,6 @@ export const getGradesTotal = (grades: Grade[]): number => {
   return gradesTotal;
 };
 
-// Crea una función para obtener los datos completos de una nota
-// La función debe recibir una nota
-// La función debe devolver un objeto con las mismas propiedades de la nota
-// más las propiedades studentName, studentLastName y courseName
-
 type GradeFullData = {
   id: number;
   studentId: number;
@@ -41,7 +36,14 @@ export const getGradeFullData = (grade: Grade): GradeFullData => {
 
 // Crea una función para eliminar una nota de la lista de notas
 // La función debe recibir un array de notas y el id de la nota a eliminar
-// export const deleteGrade =
+
+export const deleteGrade = (grades: Grade[], gradeId: number): void => {
+  const toDeleteGradePosition = grades.findIndex(
+    (grade) => grade.id === gradeId
+  );
+
+  grades.splice(toDeleteGradePosition, 1);
+};
 
 export const addGrade = (
   grades: Grade[],
