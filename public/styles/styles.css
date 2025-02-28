@@ -37,15 +37,13 @@ li {
   padding-right: 20px;
 }
 
-.main-header {
+header.main-header {
   > * {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-}
 
-header.main-header {
   background-color: #333;
   color: white;
   padding-top: 10px;
@@ -62,18 +60,18 @@ h1 {
     display: flex;
     gap: 10px;
   }
+}
 
-  a {
-    text-decoration: none;
-    color: inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 
-    &:hover {
-      text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 
-    &.active {
-      font-weight: bold;
-    }
+  &.active {
+    font-weight: bold;
   }
 }
 
