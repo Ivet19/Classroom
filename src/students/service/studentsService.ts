@@ -31,9 +31,9 @@ export const addStudent = (
     )
   ) {
     showErrorModal("Este estudiante ya está creado.");
-  } else {
-    students.push(newStudent);
+    return;
   }
+  students.push(newStudent);
 };
 
 export const deleteStudent = (students: Student[], studentId: number): void => {

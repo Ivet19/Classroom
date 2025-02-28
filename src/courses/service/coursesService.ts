@@ -11,7 +11,17 @@ export const getCoursesTotal = (courses: Course[]): number => {
 // Crea una función para añadir un curso a la lista de cursos
 // La función debe recibir un array de cursos y el nombre del curso a añadir
 // Si el curso ya existe en la lista, muestra un error con showErrorModal
-// export const addCourse =
+export const addCourse = (courses: Course[], courseName: string): void => {
+  const newCourse: Course = {
+    id: generateId(courses),
+    name: courseName,
+  };
+  if (courses.some((course) => course.name === courseName)) {
+    showErrorModal("Este curso ya está creado.");
+    return;
+  }
+  courses.push(newCourse);
+};
 
 // Crea una función para eliminar un curso de la lista de cursos
 // La función debe recibir un array de cursos y el id del curso a eliminar
